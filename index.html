@@ -1,173 +1,180 @@
-<!doctype html>
-<html lang="tg">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Донат Free Fire — Купить алмазы в Таджикистане | LEGA DANAT</title>
-
-<meta name="description" content="Быстрый и безопасный донат Free Fire в Таджикистане. Покупка алмазов без задержек, гарантия и поддержка 24/7.">
-
-<link rel="icon" href="ЛЕГА.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMADJI BENZO ТОП-1</title>
 
 <style>
-:root{
-  --bg-1:#040207;
-  --bg-2:#0b0710;
-  --neon-1:#ff2d55;
-  --neon-2:#ff6b6b;
-  --muted:#9aa0a6;
-  --container:1100px;
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+
+/* ===== BODY ===== */
 body{
-  font-family:Inter,Segoe UI,Roboto,Arial;
-  background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
-  color:#e9e9e9;
-}
-.container{max-width:var(--container);margin:auto;padding:28px}
-
-/* HEADER */
-header{display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:900;color:var(--neon-1);text-decoration:none;font-size:20px}
-nav a{margin-left:16px;text-decoration:none;color:#fff}
-
-/* HERO */
-.hero{display:flex;gap:40px;align-items:center;padding:60px 0}
-.hero-left{flex:1}
-.title{font-size:42px;color:var(--neon-1)}
-.lead{color:var(--muted);margin:12px 0}
-
-/* КНОПКИ */
-.cta{display:flex;gap:14px;margin-top:20px}
-.btn{
-  padding:12px 22px;
-  background:linear-gradient(90deg,var(--neon-1),var(--neon-2));
-  border-radius:12px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at top, #160000, #000);
+  overflow:hidden;
   color:#fff;
-  text-decoration:none;
-  font-weight:700;
 }
 
-/* 🔥🔥🔥 FIRE ORBIT BUTTON */
+/* ===== BUTTON ===== */
 .btn-orbit{
   position:relative;
-  padding:18px 46px;
-  font-size:1.2rem;
+  padding:22px 56px;
+  font-size:1.35rem;
   font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
   color:#fff;
   text-decoration:none;
-  border-radius:60px;
-  background:#09040c;
+  border-radius:70px;
+  background:#080000;
   overflow:hidden;
-  box-shadow:0 0 25px rgba(255,80,0,.7),0 0 80px rgba(255,0,0,.4);
-  transition:.3s;
+  z-index:2;
+  box-shadow:
+    0 0 30px rgba(255,90,0,.8),
+    0 0 100px rgba(255,0,0,.45);
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
-/* ВРАЩАЮЩЕЕСЯ ОГНЕННОЕ КОЛЬЦО */
+/* 🔥 FIRE ROTATION */
 .btn-orbit::before{
   content:"";
   position:absolute;
-  inset:-7px;
+  inset:-10px;
   border-radius:inherit;
-  background:conic-gradient(#ff2a00,#ff7a00,#ffd000,#ff7a00,#ff2a00);
-  animation:spin 3.5s linear infinite;
+  background:conic-gradient(
+    #ff2400,
+    #ff7a00,
+    #ffd000,
+    #ff7a00,
+    #ff2400
+  );
+  animation:fireSpin 3.5s linear infinite;
   filter:blur(3px);
   z-index:-2;
 }
+
+/* INNER BACKGROUND */
 .btn-orbit::after{
   content:"";
   position:absolute;
-  inset:5px;
-  background:#09040c;
+  inset:6px;
   border-radius:inherit;
+  background:#080000;
   z-index:-1;
 }
-.btn-orbit:hover{
-  transform:scale(1.14);
-}
-.btn-orbit:hover::before{animation-duration:.8s}
 
-/* GLITCH */
-.glitch::before,.glitch::after{
+/* ⚡ HOVER BOOST */
+.btn-orbit:hover{
+  transform:scale(1.15);
+  box-shadow:
+    0 0 60px #ffd000,
+    0 0 180px #ff2a00;
+}
+.btn-orbit:hover::before{
+  animation-duration:.7s;
+}
+
+/* ===== GLITCH ===== */
+.glitch{
+  position:relative;
+}
+.glitch::before,
+.glitch::after{
   content:attr(data-text);
   position:absolute;
-  left:0;top:0;width:100%;
+  inset:0;
   text-align:center;
+  pointer-events:none;
 }
-.glitch::before{color:#ff003c;animation:gl1 2s infinite}
-.glitch::after{color:#00fff9;animation:gl2 2.6s infinite}
+.glitch::before{
+  color:#ff003c;
+  animation:glitch1 2s infinite linear alternate-reverse;
+}
+.glitch::after{
+  color:#00fff9;
+  animation:glitch2 2.4s infinite linear alternate-reverse;
+}
 
-/* ДЫМ */
+/* ===== SMOKE ===== */
 .smoke{
   position:absolute;
-  bottom:-10px;
-  width:20px;height:20px;
-  background:rgba(255,255,255,.2);
-  border-radius:50%;
-  filter:blur(8px);
-  animation:smoke 4s infinite;
+  bottom:-60px;
+  left:50%;
+  width:160px;
+  height:160px;
+  background:radial-gradient(circle, rgba(200,200,200,.35), transparent 70%);
+  filter:blur(30px);
+  animation:smokeUp 5s infinite ease-in-out;
+  z-index:0;
 }
-.smoke:nth-child(1){left:30%}
-.smoke:nth-child(2){left:50%;animation-delay:1s}
-.smoke:nth-child(3){left:70%;animation-delay:2s}
 
-/* ИСКРЫ */
+/* ===== SPARKS ===== */
 .spark{
   position:absolute;
-  width:4px;height:4px;
+  width:4px;
+  height:4px;
   background:#ffd000;
   border-radius:50%;
-  animation:spark 1.4s infinite;
+  animation:sparkFly 1.6s infinite;
 }
-.spark:nth-child(4){top:10%;left:50%}
-.spark:nth-child(5){top:80%;left:30%}
-.spark:nth-child(6){top:50%;left:90%}
 
-/* ANIMATIONS */
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes smoke{to{transform:translateY(-120px) scale(3);opacity:0}}
-@keyframes spark{to{transform:translate(40px,-40px);opacity:0}}
-@keyframes gl1{50%{clip-path:inset(30% 0 40% 0)}}
-@keyframes gl2{50%{clip-path:inset(60% 0 10% 0)}}
+/* ===== KEYFRAMES ===== */
+@keyframes fireSpin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
 
+@keyframes smokeUp{
+  0%{transform:translate(-50%,0) scale(.6);opacity:.4}
+  100%{transform:translate(-50%,-200px) scale(1.4);opacity:0}
+}
+
+@keyframes sparkFly{
+  0%{transform:translate(0,0);opacity:1}
+  100%{transform:translate(var(--x), var(--y));opacity:0}
+}
+
+@keyframes glitch1{
+  0%{clip-path:inset(0 0 80% 0)}
+  50%{clip-path:inset(30% 0 40% 0)}
+  100%{clip-path:inset(0 0 85% 0)}
+}
+
+@keyframes glitch2{
+  0%{clip-path:inset(80% 0 0 0)}
+  50%{clip-path:inset(40% 0 30% 0)}
+  100%{clip-path:inset(75% 0 0 0)}
+}
 </style>
 </head>
 
 <body>
 
-<header class="container">
-  <a class="logo" href="index.html">LEGA</a>
-  <nav>
-    <a href="buy.html">Купить</a>
-    <a href="about.html">О нас</a>
-    <a href="support.html">Помощь</a>
-  </nav>
-</header>
+<!-- 💨 SMOKE -->
+<div class="smoke"></div>
 
-<main class="container">
-<section class="hero">
-  <div class="hero-left">
-    <h1 class="title">LEGA DANAT — Донат Free Fire 💎</h1>
-    <p class="lead">Оплатили? Отправьте чек в Telegram и алмазы придут за 5 минут!</p>
+<!-- 💥 SPARKS -->
+<div class="spark" style="--x:90px;--y:-140px;top:50%;left:50%"></div>
+<div class="spark" style="--x:-100px;--y:-120px;top:50%;left:50%"></div>
+<div class="spark" style="--x:130px;--y:-70px;top:50%;left:50%"></div>
+<div class="spark" style="--x:-140px;--y:-90px;top:50%;left:50%"></div>
 
-    <div class="cta">
-      <!-- ОБЫЧНАЯ КНОПКА -->
-      <a class="btn" href="buy.html">Купить Алмазы</a>
-
-      <!-- ОГНЕННАЯ КНОПКА -->
-      <a href="imadji-benzo.html" class="btn-orbit glitch" data-text="HAYMER Нажми! 🚀">
-        HAYMER Нажми! 🚀
-        <span class="smoke"></span>
-        <span class="smoke"></span>
-        <span class="smoke"></span>
-        <span class="spark"></span>
-        <span class="spark"></span>
-        <span class="spark"></span>
-      </a>
-    </div>
-  </div>
-</section>
-</main>
+<!-- 🔥 BUTTON -->
+<a href="imadji-benzo.html"
+   class="btn-orbit glitch"
+   data-text="IMADJI BENZO ТОП-1">
+   IMADJI BENZO ТОП-1
+</a>
 
 </body>
 </html>
