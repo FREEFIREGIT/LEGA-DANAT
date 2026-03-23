@@ -147,15 +147,15 @@ function sendToTG(){
 💎 Пакет: ${packSelect().options[packSelect().selectedIndex].text}
 📝 Сообщение: ${msg.value || "—"}
 ━━━━━━━━━━━━━━
-Админ: @davlatow18`;
+Админ: Samir`;
 
   output.value = text;
 
   let encoded = encodeURIComponent(text);
   window.open(
-    "https://t.me/share/url?text=" + encoded,
-    "_blank"
-  );
+  "https://t.me/samirdavlyatov?text=" + encoded,
+  "_blank"
+);
 }
 </script>
 
